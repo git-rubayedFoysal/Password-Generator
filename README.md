@@ -1,16 +1,55 @@
-# React + Vite
+# Password Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based password generator that creates secure, random passwords with customizable options.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Customizable Length** — Set password length from 6 to 100 characters
+- **Number Inclusion** — Optionally include numbers (0-9)
+- **Special Characters** — Optionally include special characters (!@#$%^&*_-+=[]{}~`)
+- **One-Click Copy** — Copy generated password to clipboard instantly
+- **Auto-Generate** — Automatically regenerates password when settings change
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Install dependencies
+npm install
 
-## Expanding the ESLint configuration
+# Start development server
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```
+PasswordGenerator/
+├── src/
+│   ├── App.jsx      # Main component with password logic
+│   ├── App.css     # Component styles
+│   ├── main.jsx    # Entry point
+│   └── index.css   # Global styles
+├── index.html      # HTML template
+├── package.json    # Dependencies
+└── vite.config.js  # Vite configuration
+```
+
+## How It Works
+
+| State | Description |
+|-------|-------------|
+| `password` | Generated password string |
+| `length` | Password length (default: 8) |
+| `numberAllow` | Include numbers toggle |
+| `charAllow` | Include special characters toggle |
+
+### Key Functions
+
+- `generatePassword()` — Creates random password based on settings
+- `copyPassword()` — Copies password to clipboard
+
+## Tech Stack
+
+- React
+- Vite
+- Tailwind CSS
